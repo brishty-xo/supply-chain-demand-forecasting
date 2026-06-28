@@ -127,3 +127,88 @@ RetailDemandForecasting/
 | WMAPE    | **9.23%**   |
 
 The model uses a chronological train-test split to prevent data leakage and better reflect real-world forecasting conditions.
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/<your-username>/<repository-name>.git
+cd <repository-name>
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate the environment:
+
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+
+**Linux / macOS**
+
+```bash
+source venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+### Run Demand Forecasting
+
+Open and execute:
+
+```text
+notebooks/01_demand_forecasting.ipynb
+```
+
+This notebook:
+
+- Loads and preprocesses the Walmart dataset
+- Performs feature engineering
+- Trains the XGBoost forecasting model
+- Evaluates forecasting performance
+
+### Run Inventory Optimization
+
+Open and execute:
+
+```text
+notebooks/02_inventory_optimization.ipynb
+```
+
+This notebook:
+
+- Uses forecasted demand
+- Simulates inventory dynamics
+- Generates reorder recommendations
+- Computes inventory KPIs
+
+## Key Results
+
+- Achieved a **WMAPE of 9.23%** on the forecasting task.
+- Implemented leakage-free time-series feature engineering using lag and rolling statistics.
+- Simulated a Periodic Review (Order-Up-To) inventory policy using forecasted demand.
+- Generated inventory metrics including fill rate, stockout rate, holding cost, and ordering cost.
+
+## Future Improvements
+
+Possible extensions include:
+
+- Hyperparameter tuning using Optuna
+- Multi-step demand forecasting
+- Probabilistic demand forecasting
+- Dynamic lead times
+- Economic Order Quantity (EOQ) integration
+- Containerized deployment using Docker
